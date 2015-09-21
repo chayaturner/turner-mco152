@@ -12,11 +12,11 @@ public class ScrabbleDictionaryTest {
 
 		ScrabbleDictionary testTrue = new ScrabbleDictionary();
 		boolean contains = testTrue.contains("rigmarole");
-		Assert.assertEquals(true, contains);
+		Assert.assertTrue(contains);
 
 		ScrabbleDictionary testFalse = new ScrabbleDictionary();
 		contains = testFalse.contains("supercalafrajalisticexpialadocious");
-		Assert.assertEquals(false, contains);
+		Assert.assertFalse(contains);
 	}
 
 }

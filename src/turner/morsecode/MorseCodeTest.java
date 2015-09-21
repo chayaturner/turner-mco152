@@ -16,7 +16,7 @@ public class MorseCodeTest {
 	public void TestEncode() {
 		MorseCode morsecode = new MorseCode();
 		String encoded = morsecode.encode("working");
-		Assert.assertEquals(".-- --- .-. -.- .. -. --. ", encoded);
+		Assert.assertEquals(".-- --- .-. -.- .. -. --.", encoded);
 	}
 
 }
