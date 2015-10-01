@@ -8,7 +8,7 @@ public class PythagoreanTheoremTest {
 	PythagoreanTheorem pythagoreanTheorem = new PythagoreanTheorem(3, 4, 5);
 
 	@Test
-	public void testSetAB() {
+	public void testSetAB() throws InvalidDataException {
 
 		pythagoreanTheorem.setAB(3, 4);
 		double c = pythagoreanTheorem.getC();
@@ -16,7 +16,7 @@ public class PythagoreanTheoremTest {
 	}
 
 	@Test
-	public void testSetAC() {
+	public void testSetAC() throws InvalidDataException {
 
 		pythagoreanTheorem.setAC(3, 5);
 		double b = pythagoreanTheorem.getB();
@@ -24,7 +24,7 @@ public class PythagoreanTheoremTest {
 	}
 
 	@Test
-	public void testSetBC() {
+	public void testSetBC() throws InvalidDataException {
 
 		pythagoreanTheorem.setBC(4, 5);
 		double a = pythagoreanTheorem.getA();

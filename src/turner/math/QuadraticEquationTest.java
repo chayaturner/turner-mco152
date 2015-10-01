@@ -1,7 +1,6 @@
 package turner.math;
 
 import org.junit.Assert;
-
 import org.junit.Test;
 
 public class QuadraticEquationTest {
@@ -18,5 +17,15 @@ public class QuadraticEquationTest {
 		QuadraticEquation quadraticEquation = new QuadraticEquation(1, 5, 6);
 		double negX = quadraticEquation.getNegativeX();
 		Assert.assertEquals(-3, negX, 0.01);
+	}
+
+	@Test
+	public void testThrowsInvalidException() {
+		try {
+			new QuadraticEquation(0, 0, 0);
+			Assert.fail("didn't throw exception");
+		} catch (InvalidDataException e) {
+			// expected
+		}
 	}
 }

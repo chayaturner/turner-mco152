@@ -19,7 +19,7 @@ public class MostAnagrams {
 			}
 		}
 
-		// anagram group with largest size
+		// display anagram groups with largest group size
 		for (ArrayList<String> b : anagramsLists) {
 			if (b.size() == greatestAmnt) {
 				System.out.println(b);

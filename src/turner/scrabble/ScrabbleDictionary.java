@@ -1,23 +1,25 @@
 package turner.scrabble;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Scanner;
 
 public class ScrabbleDictionary {
 
-	private Scanner dictionary;
+	private BufferedReader dictionary;
 	private ArrayList<String> arrayList;
 	private HashSet<String> set;
+	private String line;
 
-	public ScrabbleDictionary() throws FileNotFoundException {
-		this.dictionary = new Scanner(new File("dictionary.txt"));
+	public ScrabbleDictionary() throws IOException {
+		this.dictionary = new BufferedReader(new FileReader("US.dic"));
 		this.arrayList = new ArrayList<String>();
 		this.set = new HashSet<String>();
-		while (dictionary.hasNext()) {
-			arrayList.add(dictionary.next());
+
+		while ((line = dictionary.readLine()) != null) {
+			arrayList.add(line);
 		}
 		set.addAll(arrayList);
 		dictionary.close();
