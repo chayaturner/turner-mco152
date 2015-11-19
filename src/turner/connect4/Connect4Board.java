@@ -144,7 +144,7 @@ public class Connect4Board {
 			if (i % 7 < 4) {
 				if (board[i] != 0 && board[i] == board[i + 8]
 						&& board[i] == board[i + 16]
-								&& board[i] == board[i + 24]) {
+						&& board[i] == board[i + 24]) {
 					gameOver = true;
 				}
 			}
@@ -155,7 +155,7 @@ public class Connect4Board {
 			if (i % 7 > 2) {
 				if (board[i] != 0 && board[i] == board[i + 6]
 						&& board[i] == board[i + 12]
-								&& board[i] == board[i + 18]) {
+						&& board[i] == board[i + 18]) {
 					gameOver = true;
 				}
 			}
@@ -175,5 +175,5 @@ public class Connect4Board {
 			gameOver = true;
 		}
 
-	} // end checkWin()
+	} // end checkWin
 } // end class
