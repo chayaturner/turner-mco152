@@ -12,6 +12,15 @@ public class ForecastThread extends Thread {
 	ForecastThread(String city, JLabel[] forecastLabels) {
 		this.forecastLabels = forecastLabels;
 		this.city = city;
+
+		// default labels
+		// (button click will also reset the forecast labels
+		// in the case that the city is invalid, leaving labels empty
+		// instead of containing the previous city's forecast).
+		for (int i = 0; i <= 15; i++) {
+			forecastLabels[i].setText("");
+		}
+
 	}
 
 	@Override
@@ -31,6 +40,5 @@ public class ForecastThread extends Thread {
 		} catch (IOException e) {
 
 		}
-
 	}
 }

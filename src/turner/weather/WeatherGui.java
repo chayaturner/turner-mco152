@@ -58,7 +58,7 @@ public class WeatherGui extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				GetWeatherThread thread = new GetWeatherThread(panel, zip, city, temperature, description, weatherIcon,
 						zipInput, iconString);
-				thread.run();
+				thread.start();
 			}
 		});
 	}

@@ -35,7 +35,7 @@ public class ForecastGui extends JFrame {
 
 		label = new JLabel("Enter City:");
 		panel.add(label);
-		cityName = new JTextField(" ");
+		cityName = new JTextField("New York");
 		panel.add(cityName);
 		forecastsPanel = new JPanel(new GridLayout(5, 5));
 		forecastLabels = new JLabel[16];
@@ -72,8 +72,7 @@ public class ForecastGui extends JFrame {
 				}
 
 				ForecastThread thread = new ForecastThread(cityString, forecastLabels);
-				thread.run();
-
+				thread.start();
 			}
 
 		});
