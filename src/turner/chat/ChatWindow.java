@@ -1,6 +1,7 @@
 package turner.chat;
 
-import java.awt.Container;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -9,7 +10,6 @@ import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -31,25 +31,23 @@ public class ChatWindow extends JFrame {
 	public ChatWindow() {
 		setTitle("Chat Window");
 		setSize(450, 400);
+		setLocationRelativeTo(null);
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLayout(new BorderLayout());
 
-		final Container container = getContentPane();
-		// container.setLayout(new BorderLayout());
-		setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
-		// container.add();
+		area = new JTextArea();
+		text = new JTextField(30);
+		button = new JButton("Send:");
 
-		area = new JTextArea("");
-		add(area);
 		panel = new JPanel();
+		panel.setLayout(new FlowLayout());
+		panel.add(text);
+		panel.add(button);
 		// scroll = new JScrollPane(area);
 		// add(scroll, BorderLayout.CENTER);
-
-		text = new JTextField("                                 " + "              "
-				+ "                                             ");
-		panel.add(text);
-		button = new JButton("Send");
-		panel.add(button);
-		add(panel);
+		add(area, BorderLayout.CENTER);
+		add(panel, BorderLayout.SOUTH);
 
 		// connect to other's server through a url of ip address.
 		button.addActionListener(new ActionListener() {
